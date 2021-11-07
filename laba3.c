@@ -4,39 +4,38 @@
 
 int main()
 {
-    int n;
-    printf("Input n:");
-    scanf("%d", &n);
-    int* a = (int*)malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++)
+    int length;
+    printf("Input length:");
+    scanf("%d", &length);
+    int* array = (int*)malloc(length * sizeof(int)); //створення динамічного масиву
+    for (int i = 0; i < length; i++)
     {
-        printf("Input a[%d]:", i + 1);
-        scanf("%d", &a[i]);
+        printf("Input array[%d]:", i + 1); //наповнюємо масив
+        scanf("%d", &array[i]);
     }
-    int x = 1;
+    int varNoPair = 1;
 
-    x = func_arr(n, a);
+    varNoPair = WithoutPair(length, array);
 
-    prinf("x=%d", x);
-    system("pause");
+    prinf("Our number without a pair=%d", varNoPair);
     return 0;
 
 }
-int func_arr(int n, int* a)
+int  WithoutPair(int length, int* array) //функція для знаходження числа без пари
 {
     for (int i = 0; i < n; i++)
     {
-        int  k = -1;
+        int  k = -1;  //k це рандомна змінна для прописування циклу
 
         for (int j = 0; j < n; j++)
         {
-            if (a[i] + a[j]) = 0;
+            if (array[i] + array[j]) = 0;
             break;
             if (j = n - 1)
                 k = i;
         }
-        if (k != -1)
-            return a[k];
+        if (k != -1) //пройшлись по циклу і не знайшли пари
+            return array[k];
     }
 
 }
