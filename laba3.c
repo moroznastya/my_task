@@ -8,10 +8,10 @@ int main()
     int length;
     printf("Input length:");
     scanf("%d", &length);
-    int* array = (int*)malloc(length * sizeof(int)); //створення динамічного масиву
+    int* array = (int*)malloc(length * sizeof(int)); //creating a dynamic array
     for (int i = 0; i < length; i++)
     {
-        printf("Input array[%d]:", i + 1); //наповнюємо масив
+        printf("Input array[%d]:", i + 1); //filling the array
         scanf("%d", &array[i]);
     }
     int varNoPair = 1;
@@ -22,11 +22,11 @@ int main()
     return 0;
 
 }
-int  WithoutPair(int length, int* array) //функція для знаходження числа без пари
+int  WithoutPair(int length, int* array) //function of finding a number without a pair
 {
     for (int i = 0; i < n; i++)
     {
-        int  k = -1;  //k це рандомна змінна для прописування циклу
+        int  k = -1;  //k is a random variable to prescribe a loop
 
         for (int j = 0; j < n; j++)
         {
@@ -35,7 +35,7 @@ int  WithoutPair(int length, int* array) //функція для знаходження числа без пар
             if (j = n - 1)
                 k = i;
         }
-        if (k != -1) //пройшлись по циклу і не знайшли пари
+        if (k != -1)  //the cycle ended and no pair was found
             return array[k];
     }
 
