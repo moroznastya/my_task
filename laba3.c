@@ -3,7 +3,8 @@
 #include <malloc.h>
 
 int main()
-{
+{   
+    setlocate(LC_ALL, "Ukrainian");
     int length;
     printf("Input length:");
     scanf("%d", &length);
